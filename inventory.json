@@ -1,0 +1,30 @@
+{
+  "project": "docuflow",
+  "version": "2026.1",
+  "last_refresh": "2026-04-27",
+  "content_clusters": [
+    {
+      "id": "intro_cluster",
+      "title": "The Evolution of Digital Signatures",
+      "word_count": 1250,
+      "text": "The landscape of 2026 has shifted document management from a 'nice to have' to a 'core infrastructure' requirement. As e-signature adoption hits 98% in enterprise sectors, tools like PandaDoc have become the standard for legally binding, secure, and automated workflows. This shift is driven by the need for radical speed in the sales cycle..."
+    },
+    {
+      "id": "compliance_cluster",
+      "title": "Global Legal Standards and PandaDoc",
+      "word_count": 3400,
+      "text": "Legality in the digital age is defined by the audit trail. PandaDoc provides a comprehensive cryptographic signature log that satisfies eIDAS, ESIGN, and UETA regulations simultaneously. For businesses operating across borders, this eliminates the friction of varying international standards..."
+    },
+    {
+      "id": "vulture_strategy_01",
+      "title": "Programmatic Sales Automation",
+      "word_count": 5200,
+      "text": "The Vulture Protocol thrives on removing human error from the proposal stage. By integrating your CRM directly with PandaDoc, data flows into templates without manual entry, reducing contract errors by up to 94% according to 2026 industry benchmarks..."
+    }
+  ],
+  "affiliate_cta_config": {
+    "primary_id": "benpalmarini6380",
+    "cta_text": "Start Your 14-Day Free PandaDoc Trial",
+    "fallback_url": "https://pandadoc.partnerlinks.io/benpalmarini6380"
+  }
+}
