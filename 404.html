@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Route Redirection | docuflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pd-green: #1FBA6F;
+            --pd-dark: #0D1117;
+        }
+        body {
+            background: var(--pd-dark);
+            color: white;
+            font-family: 'Manrope', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container { padding: 20px; }
+        .glitch {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--pd-green);
+            margin-bottom: 0;
+        }
+        .status {
+            font-family: monospace;
+            color: #4A5568;
+            margin-bottom: 30px;
+        }
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--pd-green);
+            border-top-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .btn {
+            background: var(--pd-green);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glitch">404</div>
+        <p class="status">>> ROUTE_NOT_FOUND: RECALIBRATING TO SECURE NODE...</p>
+        <div class="loader"></div>
+        <p style="margin-top: 20px; opacity: 0.6;">You will be redirected to the secure document portal in <span id="timer">5</span>s</p>
+        <a href="https://brightlane.github.io/docuflow/" class="btn">RETURN TO DASHBOARD</a>
+    </div>
+
+    <script>
+        // Automatic Vulture Redirection
+        let count = 5;
+        const timer = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            count--;
+            timer.innerText = count;
+            if (count <= 0) {
+                clearInterval(countdown);
+                // Redirecting to your PandaDoc Affiliate Link via the main landing page logic
+                window.location.href = "https://pandadoc.partnerlinks.io/benpalmarini6380";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
