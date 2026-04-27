@@ -3,7 +3,7 @@ name: Deploy docuflow Vulture Node
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
+  workflow_dispatch: # This adds the "Run workflow" button back!
 
 permissions:
   contents: read
@@ -18,18 +18,21 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps: deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the entire repository
+          # This ensures the root files (index, blog, inventory) are grabbed
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
