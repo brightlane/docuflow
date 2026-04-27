@@ -1,0 +1,33 @@
+name: Daily Vulture SEO Refresh
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every single day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows you to run it manually anytime
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Auto-Update SEO Metadata
+        run: |
+          # Update the date in the Sitemap
+          CURRENT_DATE=$(date +%Y-%m-%d)
+          sed -i "s|<lastmod>.*</lastmod>|<lastmod>$CURRENT_DATE</lastmod>|g" sitemap.xml
+          
+          # Update the Last Refresh in Inventory
+          sed -i "s/\"last_refresh\": \".*\"/\"last_refresh\": \"$CURRENT_DATE\"/g" inventory.json
+          
+          echo "Vulture Refresh Complete for $CURRENT_DATE"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "Vulture-Bot"
+          git config --global user.email "vulture@brightlane.io"
+          git add sitemap.xml inventory.json
+          git commit -m "Vulture Daily SEO Refresh: $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
