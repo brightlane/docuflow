@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block GitHub internal search from indexing your private metadata if necessary
+Disallow: /assets/json/
+
+# Point to your primary Vulture 10K sitemap
+Sitemap: https://brightlane.github.io/docuflow/sitemap.xml
